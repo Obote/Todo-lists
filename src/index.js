@@ -1,18 +1,38 @@
-require('./index.html');
-import _ from 'lodash';
-import './index.css';
+/* eslint-disable no-unused-vars */
+import './style.css';
 
-const addForm = document.querySelector('.add');
-const list = document.querySelector('.todos');
-const search = document.querySelector('.search input');
+const listItems = [
+  {
+    description: 'Go to the gym',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'Prepare breakfast',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Wash dishes',
+    completed: false,
+    index: 2,
+  },
+];
 
-const generateTemplate = todo =>{
+function createList(taskList) {
+  return `
+    <div class="task">
+      <input type="checkbox">
+      <p>${taskList.description}</p>
+      <i class="icon-ellipsis-vertical"></i>
+    </div>
+  `;
+}
 
-    const html = ` 
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <span>${todo}</span>
-            <i class="far fa-trash-alt delete"></i>
-        </li>
-        `;
-        list.innerHTML += html;
-};
+const taskUl = document.querySelector('.task-display');
+
+listItems.forEach((taskList) => {
+  const list = document.createElement('list');
+  list.innerHTML = createList(taskList);
+  taskUl.appendChild(list);
+});
