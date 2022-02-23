@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import './style.css';
+import './index.css';
 
 const listItems = [
   {
