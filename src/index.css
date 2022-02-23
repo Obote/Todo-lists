@@ -1,22 +1,39 @@
-body{
-    background: #352f5b;
+:root {
+    --container-color: #ebebeb;
+    --font-family: lato, sans-serif;
   }
-  .container{
-    max-width: 400px;
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
   }
-  input[type=text],
-  input[type=text]:focus{
-    color: #fff;
-    border: none;
-    background: rgba(0,0,0,0.2);
-    max-width: 400px;
+  
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 100%;
   }
-  .todos li{
-    background: #423a6f;
+  
+  .task {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--font-family);
+    font-size: 1em;
+    color: #555;
   }
-  .delete{
-    cursor: pointer;
+  
+  .task p {
+    flex-basis: 90%;
   }
-  .filtered{
-      display: none !important;
+  
+  input {
+    position: relative;
   }
