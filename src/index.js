@@ -1,13 +1,18 @@
+require('./index.html');
 import _ from 'lodash';
 import './index.css';
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+
+const addForm = document.querySelector('.add');
+const list = document.querySelector('.todos');
+const search = document.querySelector('.search input');
+
+const generateTemplate = todo =>{
+
+    const html = ` 
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>${todo}</span>
+            <i class="far fa-trash-alt delete"></i>
+        </li>
+        `;
+        list.innerHTML += html;
+};
